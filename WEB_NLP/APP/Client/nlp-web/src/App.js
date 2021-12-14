@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import react from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core';
+import Avatar from '@material-ui/core';
+import SignIn from './components/login';
+document.body.style.backgroundColor = 'white'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1> Welcome to NLP Web Application</h1>
+    <SignIn/>
     </div>
   );
 }
