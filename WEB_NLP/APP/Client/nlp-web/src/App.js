@@ -4,13 +4,14 @@ import react from 'react';
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core';
 import Avatar from '@material-ui/core';
-import SignIn from './components/login';
+import Login from './components/Login';
+import {Paper} from '@material-ui/core';
 document.body.style.backgroundColor = 'white'
 function App() {
   return (
     <div className="App">
-    <h1> Welcome to NLP Web Application</h1>
-    <SignIn/>
+      <h1> Welcome to NLP Web</h1>
+    <Login/>
     </div>
   );
 }

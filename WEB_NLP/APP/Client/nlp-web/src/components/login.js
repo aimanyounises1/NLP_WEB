@@ -29,6 +29,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  document.body.style.backgroundColor = '#B0B0B0';
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -53,6 +54,7 @@ export default function SignIn() {
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
+            
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
