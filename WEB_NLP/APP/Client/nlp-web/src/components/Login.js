@@ -14,6 +14,7 @@ const Login = () => {
         pass:""
 
     });
+    
     function updateInputPass(event){
         setState({
             ...state,
@@ -76,7 +77,7 @@ const Login = () => {
       />
      
     
-      <Button 
+      <Button
           type ="submit"
         color ='primary' 
         onClick ={User_data}
