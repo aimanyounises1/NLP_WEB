@@ -9,34 +9,32 @@ const Login = () => {
     const styleAvatar = {backgroundColor : 'green'};
     const preventDefault = (event) => event.preventDefault();
     const btnStyle ={margin :"8px 0 "};
-    let [state , setState] = useState({
-        name :"",
-        pass:""
 
-    });
+    const [state , setState] = useState ({
+        credentials :{username :'' , password :''}
+    })
     
     function updateInputPass(event){
-        setState({
-            ...state,
-            pass :event.target.value
-        });
+       const cred = state.credentials;
+       cred[event.target.name] = event.target.value;
+       setState({credentials : cred});
     }
 
     function updateInputUser(event){
-        setState({
-            ...state,
-            name :event.target.value
-        });
+       const cred = state.credentials;
+       cred[event.target.name] = event.target.value;
+       console.log(event.target.value);
+       setState({credentials : cred});
     }
 
    
     let User_data = async () => {
-        fetch('http://127.0.0.1:8000' , {
+        fetch('http://127.0.0.1:8000/auth/' , {
             method :'POST',
             headers :{
                 'Content-Type' :'application/json'
             },
-            body : JSON.stringify({'name' :state.name , 'pass' :state.pass}),
+            body : JSON.stringify(state.credentials),
            
         }).then(
         data => {
@@ -52,17 +50,19 @@ const Login = () => {
                 </Avatar></Grid>
             <h2>Sign in</h2>
             <TextField
-            value ={state.name}
-            label = "Username"
+            value ={state.credentials.username}
+            label = "username"
+            name = "username"
             placeholder = "Enter your username"
             fullWidth required
             onChange = {updateInputUser}
                /> 
             <TextField
-            value ={state.pass}
+            value ={state.credentials.password}
             label = "Password"
             placeholder = "Enter your password"
             type ="password"
+            name ="password"
             fullWidth required
             onChange = {updateInputPass}
                 /> 
@@ -93,7 +93,6 @@ const Login = () => {
     Forgot password?
   </Link>
       </Typography>
-
       <Typography align= 'left'> Do you have an account? 
       <Link  href="#" onClick={preventDefault}>
     Sign up
