@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summarizier/',  include('summarizier.urls')),
     path('backendapi/' , include('backendapi.urls')),
-    path('auth/', obtain_auth_token)
+    path('auth/', obtain_auth_token) # the obtain auth token is HttpResponse with the token
 ]

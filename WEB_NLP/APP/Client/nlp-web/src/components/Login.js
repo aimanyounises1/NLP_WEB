@@ -56,7 +56,7 @@ const Login = (props) => {
            
         })
         let data = await response.json()
-            console.log(response)
+            console.log(data)
             if (response.status === 200){
                 console.log(data.token)
                 props.userLogin(data.token);

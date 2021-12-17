@@ -23,6 +23,19 @@ export const Homepage = () => {
             console.log(sentence);
         }
     }
+
+let dataJson = async() =>{
+    let response = await fetch('http://127.0.0.1:8000/backendapi/ner',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sentence)
+    })
+    let data = await response.json();
+    console.log(data)
+}
+
     return (
         <div>
             <h1>Welcome to the homepage</h1>
@@ -44,6 +57,7 @@ export const Homepage = () => {
           align ="center"
           variant ="contained"
           type ="submit"
+          onClick={dataJson}
             >
                 Submit 
             </Button>
