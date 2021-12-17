@@ -5,7 +5,7 @@ import Login from './components/Login';
 import  {Navigate  , Route , Routes} from 'react-router-dom';
 import  Homepage  from './components/Homepage';
 import {useNavigate} from 'react-router-dom';
-document.body.style.background = "#bfd6f6";
+document.body.style.background = "white";
 
 function App() {
   const history =  useNavigate()

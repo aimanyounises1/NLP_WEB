@@ -8,5 +8,6 @@ router = routers.DefaultRouter()
 router.register('users' , UserViewSet)
 urlpatterns = [
     path('' , include(router.urls)),
-    path('ner' , views.index , name="index")
+    path('ner' , views.index , name="index"),
+    path('sum' , views.summarizer , name="summarizer"),
 ]

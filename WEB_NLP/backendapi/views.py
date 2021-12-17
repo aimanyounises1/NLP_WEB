@@ -13,6 +13,7 @@ import json
 
 model = None
 tokenizer = None
+sum = None
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -33,5 +34,18 @@ def index(request):
     sentence = request.data
     result = nlp(sentence)
     print(result)   
+    return HttpResponse(json.dumps(str(result)))
 
-    return JsonResponse(str(result) , safe=False)
+
+@api_view(['POST'])
+def summarizer(request):
+    print("inside the summary")
+    print(request.data)
+    global sum
+    result = ""
+    if sum is None:
+        print("> Sum model loading ")
+        sum = pipeline("summarization")
+    result = sum(request.data , max_length=130 , min_length=30 , do_sample = False)
+    print(result)
+    return HttpResponse(json.dumps(result))
