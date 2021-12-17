@@ -4,11 +4,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-const Login = () => {
+import {useNavigate} from 'react-router-dom';
+const Login = (props) => {
     const propStyle = {padding :20 , height :"70vh" , width :280 , margin :"20px auto"};
     const styleAvatar = {backgroundColor : 'green'};
     const preventDefault = (event) => event.preventDefault();
     const btnStyle ={margin :"8px 0 "};
+    const history = useNavigate();
 
     const [state , setState] = useState ({
         credentials :{username :'' , password :''}
@@ -27,20 +29,43 @@ const Login = () => {
        setState({credentials : cred});
     }
 
-   
-    let User_data = async () => {
-        fetch('http://127.0.0.1:8000/auth/' , {
+    
+    let register = async () => {
+        fetch('http://127.0.0.1:8000/backendapi/users/' , {
             method :'POST',
             headers :{
                 'Content-Type' :'application/json'
             },
             body : JSON.stringify(state.credentials),
            
-        }).then(
-        data => {
-            console.log(data)
+        }).then(data => data.json())
+         .then(
+         data => {
+        console.log("token = ",data.token)
         }).catch(error => console.log(error))
     }
+
+    let User_data = async () => {
+       let response = await
+       fetch('http://127.0.0.1:8000/auth/' , {
+            method :'POST',
+            headers :{
+                'Content-Type' :'application/json'
+            },
+            body : JSON.stringify(state.credentials),
+           
+        })
+        let data = await response.json()
+            console.log(response)
+            if (response.status === 200){
+                console.log(data.token)
+                props.userLogin(data.token);
+                localStorage.setItem('authToken' , JSON.stringify(data.token));
+             }else{
+                 alert('Please check your password or username')
+             }
+        }
+    
     return (
         <Grid>
             <Paper elevation = {10}  style ={propStyle} >
@@ -86,6 +111,14 @@ const Login = () => {
 
           >
               Sign in</Button>
+
+    <Button
+    type ="submit"
+    color ='primary'
+    fullWidth variant ="contained"
+    style = {btnStyle}
+    onClick = {register}
+    >Register</Button>
               
             
       <Typography align= 'left'>
