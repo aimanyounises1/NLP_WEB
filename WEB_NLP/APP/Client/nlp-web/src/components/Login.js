@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import {useNavigate} from 'react-router-dom';
-const Login = () => {
+const Login = (props) => {
     const propStyle = {padding :20 , height :"70vh" , width :280 , margin :"20px auto"};
     const styleAvatar = {backgroundColor : 'green'};
     const preventDefault = (event) => event.preventDefault();
@@ -59,9 +59,8 @@ const Login = () => {
             console.log(response)
             if (response.status === 200){
                 console.log(data.token)
-              //  props.userLogin(data.token);
+                props.userLogin(data.token);
                 localStorage.setItem('authToken' , JSON.stringify(data));
-                history('/homepage');
              }else{
                  alert('Please check your password or username')
              }
