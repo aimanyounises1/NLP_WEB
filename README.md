@@ -1,5 +1,5 @@
 # Web Application for NLP :
-## User authentication using Django aut_token
+## User authentication using Django auth_token
 ![image](https://user-images.githubusercontent.com/58775369/146504624-13e59c3c-cd1f-45b9-a2fb-09f5a7148e43.png)
 
 ## Using the state to retrieve the user data and to send it wtih post method to django server:
