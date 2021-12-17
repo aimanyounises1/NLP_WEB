@@ -59,8 +59,9 @@ const Login = (props) => {
             console.log(response)
             if (response.status === 200){
                 console.log(data.token)
-                props.userLogin(data.token);
-                localStorage.setItem('authToken' , JSON.stringify(data.token));
+              //  props.userLogin(data.token);
+                localStorage.setItem('authToken' , JSON.stringify(data));
+                history('/homepage')
              }else{
                  alert('Please check your password or username')
              }

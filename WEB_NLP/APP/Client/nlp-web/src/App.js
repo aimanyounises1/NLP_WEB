@@ -12,27 +12,17 @@ import {useNavigate} from 'react-router-dom';
 
 document.body.style.backgroundColor = 'white';
 function App() {
-  const [token , setToken] = useState('');
-  let [authenticated , setAuthenticated] = useState(false);
-  const history = useNavigate();
-
-  const userLogin =(tok)=> {
-    setToken(tok)
-    setAuthenticated(true);
-    //console.log(token); 
-   // console.log(authenticated);
-    history('/homepage');
-    
-  }
-  //<Route exact path = '/homepage' element = {<Homepage/>} />
+  const [token , setToken] = useState(localStorage.getItem('authToken')? JSON.parse(localStorage.getItem('authToken')) : null);
+  let [authenticated , setAuthenticated] = useState(localStorage.getItem('authToken')? true : false);
+  setTimeout(function(){localStorage.removeItem('authToken');}, 10 * 1000);
   return (
   
     <div className="App">
      <h1>Welcome to NLP WEB</h1> 
      <Routes>
-     <Route exact path = '/'  element = {<Login userLogin = {userLogin}/>} />
+     <Route exact path = '/'  element = {<Login />} />
      <Route  path = '/homepage' element = {
-        console.log(authenticated),
+       console.log(authenticated),
        !authenticated? <Navigate to = '/' /> : <Homepage/>} />
      </Routes>
     </div>
