@@ -13,8 +13,13 @@ const useStyles = makeStyles({
         marginLeft :'70px'
     }
 
-})
+});
+
 export const Homepage = () => {
+    
+    const [state , setState] = useState({
+        words : []
+    });
     const classes = useStyles();
     const [sentence , setSentence] = useState('');    
     const handleSubmit = (e) =>{
@@ -25,16 +30,17 @@ export const Homepage = () => {
     }
 
 let dataJson = async() =>{
-    let response = await fetch('http://127.0.0.1:8000/backendapi/ner',{
+    let response = await fetch('http://127.0.0.1:8000/backendapi/sum',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(sentence)
     })
-    let data = await response.json();
-    console.log(data)
+     let data = await response.json();
+     console.log(data);
 }
+
 
     return (
         <div>
