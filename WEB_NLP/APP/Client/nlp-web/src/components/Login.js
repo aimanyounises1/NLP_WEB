@@ -6,7 +6,7 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import {useNavigate} from 'react-router-dom';
 const Login = (props) => {
-    const propStyle = {padding :20 , height :"70vh" , width :280 , margin :"20px auto"};
+    const propStyle = {padding :20 , height :"70vh" , width :600 , margin :"20px auto", backgroundColor :"white"};
     const styleAvatar = {backgroundColor : 'green'};
     const preventDefault = (event) => event.preventDefault();
     const btnStyle ={margin :"8px 0 "};
@@ -69,6 +69,7 @@ const Login = (props) => {
     return (
         <Grid>
             <Paper elevation = {10}  style ={propStyle} >
+                <h1 >Welcome to NLP Web</h1>
                 <Grid align = "center">
                      <Avatar style = {styleAvatar}>
                  H
@@ -76,7 +77,7 @@ const Login = (props) => {
             <h2>Sign in</h2>
             <TextField
             value ={state.credentials.username}
-            label = "username"
+            label = "Username"
             name = "username"
             placeholder = "Enter your username"
             fullWidth required
@@ -106,7 +107,9 @@ const Login = (props) => {
           type ="submit"
         color ='primary' 
         onClick ={User_data}
-        fullWidth variant ="contained"
+        variant ='outlined'
+        fullWidth
+         variant ="contained"
         style= {btnStyle}
 
           >
