@@ -4,7 +4,7 @@ import { Avatar, Grid, Paper } from "@material-ui/core";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Paper
+      <Paper 
         className="sidebar_top"
         elevation={10}
         style={{ backgroundColor: "#bfd6f6", height: "94vh" }}
@@ -14,7 +14,7 @@ function Sidebar() {
              abstract-banner-background-with-red-shapes_1361-3348.jpg?size=626&ext=jpg&ga=GA1.2.1518270500.1634428800"
         ></img>
         <Avatar></Avatar>
-        <h3>Hello Sidebar!</h3>
+        <h3 >Aiman Younis</h3>
       </Paper>
     </div>
   );

@@ -67,7 +67,7 @@ const Login = (props) => {
     return (
       <Grid>
         <Paper elevation={10} style={propStyle}>
-          <h1>Welcome to NLP Web</h1>
+          <h1 align="center">Welcome to NLP Web</h1>
           <Grid align="center">
             <Avatar style={styleAvatar}>H</Avatar>
           </Grid>

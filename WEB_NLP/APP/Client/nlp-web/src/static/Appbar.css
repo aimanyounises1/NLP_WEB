@@ -1,0 +1,16 @@
+.appbar {
+    display:flex;
+    margin-bottom:10px;
+}
+
+.typography{
+    font-weight: bold;
+    font-size : 20px;
+    color : black;
+}
+
+.btn__appbar{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}

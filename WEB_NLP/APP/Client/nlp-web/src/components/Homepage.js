@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Grid, Paper, TextField } from "@material-ui/core";
 import { makeStyles, Button, Container } from "@material-ui/core";
 import Sidebar from "./Sidebar";
+import Appbar from "./Appbar";
 import "../static/Homepage.css";
 import "../static/Sidebar.css";
+import "../static/Appbar.css"
 const useStyles = makeStyles({
   field: {
     width: "100%",
@@ -28,7 +30,6 @@ export const Homepage = () => {
     padding: 20,
     height: "90vh",
     width: "95%",
-    margin: "20px auto",
     backgroundColor: "#bfd6f6",
   };
 
@@ -65,7 +66,11 @@ export const Homepage = () => {
   }
 
   return (
-    <div className="homepage">
+    <div>
+      <div className="appbar"> 
+      <Appbar />
+     </div>
+    <div className="homepage" >
       <div className="sidebar">
         <Sidebar />
       </div>
@@ -104,6 +109,7 @@ export const Homepage = () => {
           </Grid>
         </Paper>
       </div>
+    </div>
     </div>
   );
 };
