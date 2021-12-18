@@ -1,0 +1,11 @@
+.homepage {
+display: flex;
+
+
+}
+
+.homepage_in{
+    flex-direction: column;
+    flex: 0.8;
+    display:flex;
+}

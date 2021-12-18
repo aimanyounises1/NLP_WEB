@@ -4,13 +4,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import {useNavigate} from 'react-router-dom';
 const Login = (props) => {
     const propStyle = {padding :20 , height :"70vh" , width :600 , margin :"20px auto", backgroundColor :"white"};
     const styleAvatar = {backgroundColor : 'green'};
     const preventDefault = (event) => event.preventDefault();
     const btnStyle ={margin :"8px 0 "};
-    const history = useNavigate();
 
     const [state , setState] = useState ({
         credentials :{username :'' , password :''}
@@ -67,79 +65,77 @@ const Login = (props) => {
         }
     
     return (
-        <Grid>
-            <Paper elevation = {10}  style ={propStyle} >
-                <h1 >Welcome to NLP Web</h1>
-                <Grid align = "center">
-                     <Avatar style = {styleAvatar}>
-                 H
-                </Avatar></Grid>
-            <h2>Sign in</h2>
-            <TextField
-            value ={state.credentials.username}
-            label = "Username"
-            name = "username"
-            placeholder = "Enter your username"
-            fullWidth required
-            onChange = {updateInputUser}
-               /> 
-            <TextField
-            value ={state.credentials.password}
-            label = "Password"
-            placeholder = "Enter your password"
-            type ="password"
-            name ="password"
-            fullWidth required
-            onChange = {updateInputPass}
-                /> 
-            <FormControlLabel
-        control={
-          <Checkbox
-            name="checkedB"
-            color="primary"
+      <Grid>
+        <Paper elevation={10} style={propStyle}>
+          <h1>Welcome to NLP Web</h1>
+          <Grid align="center">
+            <Avatar style={styleAvatar}>H</Avatar>
+          </Grid>
+          <h2>Sign in</h2>
+          <TextField
+            value={state.credentials.username}
+            label="Username"
+            name="username"
+            placeholder="Enter your username"
+            fullWidth
+            required
+            onChange={updateInputUser}
           />
-        }
-        label="Remember me"
-      />
-     
-    
-      <Button
-          type ="submit"
-        color ='primary' 
-        onClick ={User_data}
-        variant ='outlined'
-        fullWidth
-         variant ="contained"
-        style= {btnStyle}
+          <TextField
+            value={state.credentials.password}
+            label="Password"
+            placeholder="Enter your password"
+            type="password"
+            name="password"
+            fullWidth
+            required
+            onChange={updateInputPass}
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Remember me"
+          />
 
+          <Button
+            type="submit"
+            color="primary"
+            onClick={User_data}
+            variant="outlined"
+            fullWidth
+            variant="contained"
+            style={btnStyle}
           >
-              Sign in</Button>
+            Sign in
+          </Button>
 
-    <Button
-    type ="submit"
-    color ='primary'
-    fullWidth variant ="contained"
-    style = {btnStyle}
-    onClick = {register}
-    >Register</Button>
-              
-            
-      <Typography align= 'left'>
-      <Link  href="#" onClick={preventDefault}>
-    Forgot password?
-  </Link>
-      </Typography>
-      <Typography align= 'left'> Do you have an account? 
-      <Link  href="#" onClick={preventDefault}>
-    Sign up
-  </Link>
-      </Typography>
-                </Paper>
+          <Button
+            type="submit"
+            color="primary"
+            fullWidth
+            variant="contained"
+            style={btnStyle}
+            onClick={register}
+          >
+            Register
+          </Button>
 
-            </Grid>
-    )
+          <Typography align="left">
+            <Link href="#" onClick={preventDefault}>
+              Forgot password?
+            </Link>
+          </Typography>
+          <Typography align="left">
+            {" "}
+            Do you have an account?
+            <Link href="#" onClick={preventDefault}>
+              Sign up
+            </Link>
+          </Typography>
+        </Paper>
+      </Grid>
+    );
 }
 
-export default Login
+export default Login;
 
 

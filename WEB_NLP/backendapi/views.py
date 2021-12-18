@@ -26,7 +26,7 @@ def index(request):
     result = ""
     print(request.data)
     if model is None and tokenizer is None:
-        print("> Model is Loaded")
+        print("> Model is Loading...")
         tokenizer = AutoTokenizer.from_pretrained("dslim/bert-base-NER")
         model = AutoModelForTokenClassification.from_pretrained("dslim/bert-base-NER")
 
@@ -44,7 +44,7 @@ def summarizer(request):
     global sum
     result = ""
     if sum is None:
-        print("> Sum model loading ")
+        print("> Sum model loading... ")
         sum = pipeline("summarization")
     result = sum(request.data , max_length=130 , min_length=30 , do_sample = False)
     print(result)
