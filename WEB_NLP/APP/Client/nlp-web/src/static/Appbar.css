@@ -1,16 +1,36 @@
 .appbar {
     display:flex;
-    margin-bottom:10px;
+    flex-direction:row;
+    align-items:center;
+    position: sticky;
+    cursor: pointer;
+
+
 }
 
 .typography{
     font-weight: bold;
     font-size : 20px;
     color : black;
+    margin-right: auto;
+    font-variant: bold;
+ 
 }
 
 .btn__appbar{
     color: black;
     font-weight: bold;
     font-size: 15px;
+}
+
+.appbar > Button{
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    background-color:#C70039;
+}
+.appbar > Button:hover{
+    background-color : red ;
+
 }

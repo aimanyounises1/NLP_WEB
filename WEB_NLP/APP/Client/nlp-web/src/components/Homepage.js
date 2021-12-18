@@ -31,6 +31,7 @@ export const Homepage = () => {
     height: "90vh",
     width: "95%",
     backgroundColor: "#bfd6f6",
+
   };
 
   const [state, setState] = useState({
@@ -57,6 +58,7 @@ export const Homepage = () => {
     });
     let data = await response.json();
     setResult(data[0].summary_text);
+    setVariable("Summarizer")
     console.log(result);
   };
   {
@@ -67,17 +69,15 @@ export const Homepage = () => {
 
   return (
     <div>
-      <div className="appbar"> 
       <Appbar />
-     </div>
     <div className="homepage" >
       <div className="sidebar">
-        <Sidebar />
+        <Sidebar /> 
       </div>
       <div className="homepage_in">
         <Paper elevation={10} style={propStyle}>
           <Grid>
-            <h1>Welcome to the homepage</h1>
+            <h1>Welcome to {variable} </h1>
             <form noValidate onSubmit={handleSubmit}>
               <TextField
                 className={classes.field}
