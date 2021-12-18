@@ -5,5 +5,5 @@
 ## User Signin page
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/signIn.png)
 
-## User Interface 
+## User Interface for bert summarization model.
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/User_Interface.png)
