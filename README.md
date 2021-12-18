@@ -11,7 +11,7 @@
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/User_Interface.png)
 
 
-## TODO:
+## TODO list :
 * Initialize the user's profile.
 * Connected all nlp models to the app.
 * improving the design.
