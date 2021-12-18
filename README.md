@@ -15,4 +15,5 @@
 * Initialize the user's profile.
 * Connected all nlp models to the app.
 * improving the design.
+* Adding Hebrew and Arabic languages.
 
