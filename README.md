@@ -1,4 +1,4 @@
-# Web Application for NLP :
+# Web Application with NLP :
 ### A  Full-stack project in NLP using Django as a backend and Django rest framework as API with Bert model, the fronend is with React.js.
 
 ## User authentication using Django auth_token
