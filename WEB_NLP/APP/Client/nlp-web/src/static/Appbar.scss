@@ -1,60 +1,49 @@
 .appbar {
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    position: sticky;
-    cursor: pointer;
-    .typography{
-        font-weight: bold;
-        font-size : 20px;
-        color : black;
-        font-variant: bold;
-        margin-right: auto;
-        .mark {
-            padding: 0.3em;
-            border-radius: 0.3em;
-            background-color:black;
-            padding:0.5em;
-            display: inline;
-            .span{
-                color: white;
-                font-size: 20px;
-                padding: 0.5em;
-            }
-        }
-        .button {
-            display:flex;
-            color: black;
-            font-weight: bold;
-            font-size: 15px;
-            background-color:#C70039;
-            border-radius:1em;
-            margin-right: auto;
-            display: flex;
-
-            }
-     
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: sticky;
+  cursor: pointer;
+  .typography {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    font-variant: bold;
+    margin-right: auto;
+    .mark {
+      padding: 0.3em;
+      border-radius: 0.3em;
+      background-color: black;
+      padding: 0.5em;
+      display: inline;
+      .span {
+        color: white;
+        font-size: 20px;
+        padding: 0.5em;
+        font-style: italic;
+      }
     }
+    .button {
+      color: black;
+      font-weight: bold;
+      font-size: 15px;
+      background-color: #c70039;
+      border-radius: 1em;
+      margin-right: auto;
+    }
+  }
+}
 
+.btn__appbar {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+.appbar > Button:hover {
+  background-color: red;
 }
 
 
 
-.btn__appbar{
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-   
-}
-
-.appbar > Button{
-    display: flex;
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    background-color:#C70039;
-}
-.appbar > Button:hover{
-    background-color : red ;
-
-}

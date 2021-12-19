@@ -1,7 +1,7 @@
 .homepage {
 display: flex;
-
-
+margin-top:70px;
+flex-direction: row;
 }
 
 .homepage_in{
@@ -10,3 +10,5 @@ display: flex;
     display:flex;
     padding: 5px;
 }
+
+

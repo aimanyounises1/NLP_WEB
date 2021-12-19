@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     width: "100%",
     height: "200px",
     fontSize: 50,
+
   },
   btn: {
     color: "black",
@@ -31,6 +32,7 @@ export const Homepage = () => {
     height: "90vh",
     width: "95%",
     backgroundColor: "#bfd6f6",
+    position: "static",
 
   };
 
@@ -68,26 +70,27 @@ export const Homepage = () => {
   }
 
   return (
-    <div>
+    <div >
+      <div >
       <Appbar />
-    <div className="homepage" >
-      <div className="sidebar">
-        <Sidebar /> 
       </div>
+
+    <div className="homepage" >
+    <Sidebar />
       <div className="homepage_in">
         <Paper elevation={10} style={propStyle}>
-          <Grid>
-            <h1>Welcome to {variable} </h1>
+          <Grid >
+            <h1>Welcome to the homepage</h1>
             <form noValidate onSubmit={handleSubmit}>
               <TextField
-                className={classes.field}
                 label="Please enter your text"
                 variant="outlined"
                 color="secondary"
+                className={classes.field}
                 required={true}
                 rows={7}
                 multiline
-                inputProps={{ style: { fontSize: 20, fontWeight: "bold" } }}
+                inputProps={{ style: { fontSize: 20, fontWeight: "bold" , position: "static"} }}
                 onChange={(e) => {
                   setSentence(e.target.value);
                 }}
@@ -100,6 +103,7 @@ export const Homepage = () => {
                   variant="contained"
                   type="submit"
                   onClick={dataJson}
+                  style={{position:"static"}}
                 >
                   Submit
                 </Button>
@@ -111,6 +115,7 @@ export const Homepage = () => {
       </div>
     </div>
     </div>
+        
   );
 };
 export default Homepage;

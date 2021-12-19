@@ -6,8 +6,9 @@ import  {Navigate  , Route , Routes} from 'react-router-dom';
 import  Homepage  from './components/Homepage';
 import {useNavigate} from 'react-router-dom';
 import Appbar from './components/Appbar';
-document.body.style.background = "white";
+import './static/Homepage.css';
 
+document.body.style.background = "white";
 
 function App() {
   const history =  useNavigate()
@@ -20,16 +21,17 @@ function App() {
     history('/homepage')
   }
   return (
-    <div >
-      <div>
-     <Routes>
-     <Route exact path = '/'  element = {<Login userLogin = {userLogin}/>} />
-     <Route  exact path = '/homepage' element = {  
+    <div>
+      <div> 
+      <Routes>
+       <Route exact path = '/'  element = {<Login userLogin = {userLogin}/>} />
+       <Route exact path = '/home' /> 
+       <Route  exact path = '/homepage' element = {  
        !authenticated? <Navigate to="/" /> :  <Homepage />} />
      </Routes>
-     </div>
+      </div>
     </div>
- 
+   
   );  
 }
 
