@@ -1,6 +1,5 @@
 .appbar {
-  display: flex;
-  flex-direction: row;
+  display:flex; ;
   align-items: center;
   position: sticky;
   cursor: pointer;
@@ -15,7 +14,7 @@
       border-radius: 0.3em;
       background-color: black;
       padding: 0.5em;
-      display: inline;
+      display: block;
       .span {
         color: white;
         font-size: 20px;
@@ -45,5 +44,11 @@
   background-color: red;
 }
 
-
-
+.btn{
+  background-color:red;
+}
+.div__container{
+  display: block;
+  margin: 10px;
+  
+}

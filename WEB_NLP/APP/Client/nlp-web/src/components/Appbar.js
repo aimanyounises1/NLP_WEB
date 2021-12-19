@@ -6,8 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import { useNavigate } from 'react-router-dom';
-
-//import '../static/Appbar.css';
 import '../static/Appbar.scss';
 
 export default function Appbar() {
@@ -17,9 +15,10 @@ export default function Appbar() {
     history('/');
   }
   return (
+  
     <Box sx= {{ flexGrow: 1 }} >
     <AppBar >
-      <Toolbar style ={{backgroundColor:'#bfd6f6'}}  className="appbar" >
+      <Toolbar style ={{backgroundColor:'#bfd6f6'}} className="appbar" >
         <Typography className="typography"  >
           <mark className="mark">
         <span className="span"> Welcome to NLP WEB</span>
@@ -29,6 +28,7 @@ export default function Appbar() {
       </Toolbar>
     </AppBar>
   </Box>
+
 
   );
 }

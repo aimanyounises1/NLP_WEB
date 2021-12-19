@@ -60,7 +60,7 @@ export const Homepage = () => {
     });
     let data = await response.json();
     setResult(data[0].summary_text);
-    setVariable("Summarizer")
+    setVariable("Summarizer");
     console.log(result);
   };
   {
@@ -70,11 +70,8 @@ export const Homepage = () => {
   }
 
   return (
-    <div >
-      <div >
-      <Appbar />
-      </div>
-
+    < div class="container" >
+    <Appbar />  
     <div className="homepage" >
     <Sidebar />
       <div className="homepage_in">

@@ -1,7 +1,7 @@
 .homepage {
 display: flex;
-margin-top:70px;
 flex-direction: row;
+margin-top:70px;
 }
 
 .homepage_in{

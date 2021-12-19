@@ -4,12 +4,12 @@ import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import  {Navigate  , Route , Routes} from 'react-router-dom';
 import  Homepage  from './components/Homepage';
+import Home from './components/Home';
 import {useNavigate} from 'react-router-dom';
 import Appbar from './components/Appbar';
 import './static/Homepage.css';
 
-document.body.style.background = "white";
-
+document.body.style.backgroundColor ="black";
 function App() {
   const history =  useNavigate()
   const [token , setToken] = useState(localStorage.getItem('authToken')? JSON.parse(localStorage.getItem('authToken')) : null);
@@ -18,19 +18,18 @@ function App() {
   const userLogin = (tok) =>{
     setToken(tok);
     setAuthenticated(authenticated => true);
-    history('/homepage')
+    history('/home')
   }
   return (
-    <div>
-      <div> 
+    
       <Routes>
        <Route exact path = '/'  element = {<Login userLogin = {userLogin}/>} />
-       <Route exact path = '/home' /> 
+       <Route exact path = '/home' element = {<Home />} /> 
        <Route  exact path = '/homepage' element = {  
        !authenticated? <Navigate to="/" /> :  <Homepage />} />
      </Routes>
-      </div>
-    </div>
+
+
    
   );  
 }
