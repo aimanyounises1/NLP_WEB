@@ -8,7 +8,7 @@
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/signIn.png)
 
 ## User Interface for bert summarization model :
-![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/still_not_over.png)
+![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/UI.png)
 
 
 ## TODO list :
