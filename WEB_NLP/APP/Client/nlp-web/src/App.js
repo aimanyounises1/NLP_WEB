@@ -8,7 +8,7 @@ import Home from './components/Home';
 import {useNavigate} from 'react-router-dom';
 import Appbar from './components/Appbar';
 import './static/Homepage.css';
-
+import Modal from './components/Modal';
 document.body.style.backgroundColor ="black";
 function App() {
   const history =  useNavigate()
@@ -18,15 +18,20 @@ function App() {
   const userLogin = (tok) =>{
     setToken(tok);
     setAuthenticated(authenticated => true);
-    history('/home')
+    console.log('homepage')
+    //history('/homepage')
   }
   return (
     
       <Routes>
        <Route exact path = '/'  element = {<Login userLogin = {userLogin}/>} />
-       <Route exact path = '/home' element = {<Home />} /> 
+       <Route exact path = '/home' element = 
+       {
+        
+       <Home />  }/> 
        <Route  exact path = '/homepage' element = {  
        !authenticated? <Navigate to="/" /> :  <Homepage />} />
+       <Route exact path = '/signin' element = {<Login userLogin = {userLogin}/>}></Route>
      </Routes>
 
 
