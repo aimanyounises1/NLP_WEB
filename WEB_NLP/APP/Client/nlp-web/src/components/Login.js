@@ -6,7 +6,7 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import MenuItem from "@material-ui/core/MenuItem";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 const Login = (props) => {
   const history = useNavigate();
@@ -20,9 +20,15 @@ const Login = (props) => {
   };
   const styleAvatar = { backgroundColor: "green" };
   const preventDefault = (event) => event.preventDefault();
-  const btnStyle = { margin: "8px 0 ", border: "solid #007AF3",
-   backgroundColor: "white",color: "#007AF3", 
-   fontWeight:"bold" , borderRadius: "10em" , fontSize: "1em"};
+  const btnStyle = {
+    margin: "8px 0 ",
+    border: "solid #007AF3",
+    backgroundColor: "white",
+    color: "#007AF3",
+    fontWeight: "bold",
+    borderRadius: "10em",
+    fontSize: "1em",
+  };
   document.body.style.overflow = "hidden";
   const [state, setState] = useState({
     credentials: { username: "", password: "" },
@@ -68,10 +74,10 @@ const Login = (props) => {
     console.log(data);
     if (response.status === 200) {
       console.log(data.token);
-     // props.userLogin(data.token);
+      // props.userLogin(data.token);
       localStorage.setItem("authToken", JSON.stringify(data));
-      history('/home')
-      alert("You are logged in!")
+      history("/home");
+      alert("You are logged in!");
     } else {
       alert("Please check your password or username");
     }

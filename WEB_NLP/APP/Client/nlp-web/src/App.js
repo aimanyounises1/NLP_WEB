@@ -8,7 +8,6 @@ import Home from './components/Home';
 import {useNavigate} from 'react-router-dom';
 import Appbar from './components/Appbar';
 import './static/Homepage.css';
-import Modal from './components/Modal';
 document.body.style.backgroundColor ="black";
 function App() {
   const history =  useNavigate()

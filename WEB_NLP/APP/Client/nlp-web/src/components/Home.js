@@ -15,15 +15,13 @@ export default function Home(props) {
     setModal(!modal);
     if (modal) {
       document.getElementById("name").style.opacity = 0.1;
-    } 
+    }
     console.log("in");
   };
 
   const clicked = (click) => {
     if (click) {
       document.getElementById("name").style.opacity = 1;
-      
-
     }
   };
 
@@ -48,13 +46,14 @@ export default function Home(props) {
 
   return (
     <div id="grand">
-     {modal && <Login clicked={clicked}/>}
+      {modal && <Login clicked={clicked} />}
 
       <div id="name">
         <div className="navbar">
           <div className="container">
             <a className="logo" href="#">
-              i<span>Study</span>
+              <span>NLP </span>
+              WEB
             </a>
 
             <img
