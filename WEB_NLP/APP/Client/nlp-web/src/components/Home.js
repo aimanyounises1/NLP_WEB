@@ -6,38 +6,23 @@ import { Paper } from "@material-ui/core";
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
 import menu from "../images/menu.svg";
-import Button from "./Button";
 export default function Home(props) {
   const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    console.log(modal);
-    setModal(!modal);
-    if (modal) {
-      document.getElementById("name").style.opacity = 0.1;
-      document.body.style.overflow = "hidden";
-    }
-    console.log("in");
-  };
   const clicked = (click) => {
-    setModal((modal) => click);
-    console.log("clicked = ", click);
-    console.log("modal = ", modal);
+    setModal(click);
+    console.log("click");
     if (modal) {
-      document.getElementById("name").style.opacity = 0.1;
-      document.body.style.overflow = "hidden";
-      //  setModal(modal => !click);
-    }
+        document.getElementById("name").style.opacity = 0.7;
+        document.body.style.overflow = "hidden";
+      }
   };
   useEffect(() => {
+    console.log("useEffect");
     clicked(modal);
   }, [modal]);
 
-  const exit = (e) => {
-    if (!e) {
-      document.getElementById("name").style.opacity = 1;
-     
-    }
+  const exit = () => {
+    document.getElementById("name").style.opacity = 1;
     setModal(false);
   };
 
@@ -62,7 +47,7 @@ export default function Home(props) {
 
   return (
     <div id="grand">
-      {modal && <Login exit={exit} />}
+      {modal && <Login  exit = {exit}/>}
       <div id="name">
         <div className="navbar">
           <div className="container">
@@ -104,7 +89,8 @@ export default function Home(props) {
                   <a href="#">Contact</a>
                 </li>
                 <li className="go-premium-cta">
-                  <Button   clicked={clicked} />
+                
+                <button className="button" onClick={()=>{setModal(!modal)}} > Sign in</button>
                 </li>
               </ul>
             </nav>
@@ -199,10 +185,10 @@ export default function Home(props) {
               <h2> Contact me</h2>
 
               <form action="">
-                <label for="name">Name</label>
+                <label type="name">Name</label>
                 <input type="text" id="name" name="name" />
 
-                <label for="message">Message</label>
+                <label type="message">Message</label>
                 <textarea
                   name="message"
                   id="message"

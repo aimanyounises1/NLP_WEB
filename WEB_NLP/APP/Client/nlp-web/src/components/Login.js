@@ -84,7 +84,7 @@ const Login = (props) => {
   };
   const Hide = () => {
     document.getElementById("parent").style.display = "none";
-    props.exit(false);
+    props.exit("");
     document.body.style.overflow = "unset";
   };
   return (
