@@ -15,10 +15,10 @@ const Login = (props) => {
     height: "70vh",
     margin: "20px auto",
     width: 400,
-    backgroundColor: "white",
+    backgroundColor: "black",
     height: "100%",
   };
-  const styleAvatar = { backgroundColor: "green" };
+  const styleAvatar = { backgroundColor: "#007AF3" };
   const preventDefault = (event) => event.preventDefault();
   const btnStyle = {
     margin: "8px 0 ",
@@ -29,7 +29,6 @@ const Login = (props) => {
     borderRadius: "10em",
     fontSize: "1em",
   };
-  document.body.style.overflow = "hidden";
   const [state, setState] = useState({
     credentials: { username: "", password: "" },
   });
@@ -46,6 +45,7 @@ const Login = (props) => {
     console.log(event.target.value);
     setState({ credentials: cred });
   }
+ // document.body.style.overflow = "hidden";
 
   let register = async () => {
     fetch("http://127.0.0.1:8000/backendapi/users/", {
@@ -84,7 +84,7 @@ const Login = (props) => {
   };
   const Hide = () => {
     document.getElementById("parent").style.display = "none";
-    props.clicked(true);
+    props.exit(false);
     document.body.style.overflow = "unset";
   };
   return (
@@ -96,7 +96,7 @@ const Login = (props) => {
             &#x2573;
           </button>
         </div>
-        <h1 align="center" className="header">
+        <h1 align="center" className="header" text-color="#007AF3">
           Welcome to NLP Web
         </h1>
         <Grid align="center">
@@ -106,26 +106,53 @@ const Login = (props) => {
         <TextField
           className="textfield"
           value={state.credentials.username}
+          placeholder="Enter your username"
           label="Username"
           name="username"
-          placeholder="Enter your username"
           fullWidth
           required
           onChange={updateInputUser}
+          inputProps={{ color: "gray" }}
+          style={{
+            backgroundColor: "gray ",
+            marginBottom: "1em",
+            borderRadius: "0.4em",
+          }}
         />
         <TextField
           value={state.credentials.password}
-          label="Password"
           placeholder="Enter your password"
           type="password"
-          name="password"
           fullWidth
+          name="password"
+          label="Password"
           required
           className="textfield"
+          style={{
+            backgroundColor: "gray",
+            marginBottom: "1em",
+            borderRadius: "0.4em",
+          }}
           onChange={updateInputPass}
         />
         <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
+          style={{
+            margin: "0.3em",
+            backgroundColor: "black",
+            color: "white",
+            fontWeight: "bold",
+          }}
+          control={
+            <Checkbox
+              name="checkBox"
+              color="white"
+              style={{
+                backgroundColor: "gray",
+                border: "0.1em solid",
+                marginRight: "1em",
+              }}
+            />
+          }
           label="Remember me"
         />
 
@@ -152,15 +179,21 @@ const Login = (props) => {
           Register
         </Button>
 
-        <Typography align="left">
+        <Typography
+          align="center"
+          style={{ margin: "0.3em", color: "white", fontWeight: "bold" }}
+        >
           <Link href="#" onClick={preventDefault}>
             Forgot password?
           </Link>
         </Typography>
-        <Typography align="left">
+        <Typography
+          align="center"
+          style={{ margin: "0.3em", color: "white", fontWeight: "bold" }}
+        >
           {" "}
           Do you have an account?
-          <Link href="#" onClick={preventDefault}>
+          <Link href="#" onClick={preventDefault} style={{ margin: "1em" }}>
             Sign up
           </Link>
         </Typography>

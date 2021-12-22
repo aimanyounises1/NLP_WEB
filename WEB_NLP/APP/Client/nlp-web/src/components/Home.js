@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../static/Home.scss";
 import MenuIcon from "@material-ui//core/Menu";
 import "../static/Modal.css";
@@ -6,7 +6,7 @@ import { Paper } from "@material-ui/core";
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
 import menu from "../images/menu.svg";
-
+import Button from "./Button";
 export default function Home(props) {
   const [modal, setModal] = useState(false);
 
@@ -15,14 +15,30 @@ export default function Home(props) {
     setModal(!modal);
     if (modal) {
       document.getElementById("name").style.opacity = 0.1;
+      document.body.style.overflow = "hidden";
     }
     console.log("in");
   };
-
   const clicked = (click) => {
-    if (click) {
-      document.getElementById("name").style.opacity = 1;
+    setModal((modal) => click);
+    console.log("clicked = ", click);
+    console.log("modal = ", modal);
+    if (modal) {
+      document.getElementById("name").style.opacity = 0.1;
+      document.body.style.overflow = "hidden";
+      //  setModal(modal => !click);
     }
+  };
+  useEffect(() => {
+    clicked(modal);
+  }, [modal]);
+
+  const exit = (e) => {
+    if (!e) {
+      document.getElementById("name").style.opacity = 1;
+     
+    }
+    setModal(false);
   };
 
   const history = useNavigate();
@@ -46,8 +62,7 @@ export default function Home(props) {
 
   return (
     <div id="grand">
-      {modal && <Login clicked={clicked} />}
-
+      {modal && <Login exit={exit} />}
       <div id="name">
         <div className="navbar">
           <div className="container">
@@ -89,9 +104,7 @@ export default function Home(props) {
                   <a href="#">Contact</a>
                 </li>
                 <li className="go-premium-cta">
-                  <button onClick={toggleModal} className="button">
-                    Sign in
-                  </button>
+                  <Button   clicked={clicked} />
                 </li>
               </ul>
             </nav>
@@ -106,13 +119,6 @@ export default function Home(props) {
               <div className="hero-cta">
                 <a href="#" class="primary-cta">
                   Just for free
-                </a>
-                <a href="#" class="watch-video-cta">
-                  <img
-                    src="https://assets.codepen.io/2621168/watch.svg"
-                    alt="Watch a video"
-                  />
-                  Watch a video
                 </a>
               </div>
             </div>
@@ -129,11 +135,11 @@ export default function Home(props) {
             <div className="container">
               <ul className="features-list">
                 <li>Unlimited Tasks</li>
-                <li>SMS Task Reminders</li>
-                <li>Confetti Explosions upon Task Completions</li>
-                <li>Social Media Announcements</li>
-                <li>Real Time Collaboration</li>
+                <li>Named Entity Recognition</li>
+                <li>Summarizer</li>
+                <li>Mask completion</li>
                 <li>Other awesome features</li>
+                <li> And Real Time Collaboration</li>
               </ul>
 
               <img
