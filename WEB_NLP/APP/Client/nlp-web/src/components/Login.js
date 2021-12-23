@@ -4,9 +4,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
-import Modal from "@material-ui/core/Modal";
-import MenuItem from "@material-ui/core/MenuItem";
 import { useNavigate } from "react-router-dom";
+//import {Link} from 'react-scroll';
 import "./Login.scss";
 const Login = (props) => {
   const history = useNavigate();
@@ -78,6 +77,9 @@ const Login = (props) => {
       localStorage.setItem("authToken", JSON.stringify(data));
       history("/home");
       alert("You are logged in!");
+      document.getElementById("parent").style.display = "none";
+      props.exit("");
+      document.body.style.overflow = "unset";
     } else {
       alert("Please check your password or username");
     }
@@ -155,7 +157,7 @@ const Login = (props) => {
           }
           label="Remember me"
         />
-
+      
         <Button
           type="submit"
           color="primary"

@@ -11,9 +11,9 @@ function Handler() {
     setOption(event.target.value);
   };
   return (
-    <section className="input__sec">
+    <section className="input__sec" id="input__scroll">
       <h2>
-        NLP <span style={{ color: "blue" }}>Web</span>
+        NLP <span style={{ color: "#007AF3" }}>WEB</span>
       </h2>
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>

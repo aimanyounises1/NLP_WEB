@@ -2,6 +2,7 @@
 
 :root {
     --primary-color: #007AF3;
+    --color-logout:rgb(206, 65, 65);
 }
 
 body {
@@ -319,6 +320,22 @@ nav {
             }
           
         }
+        .logout__btn {
+            color: var(--color-logout);
+            border: 3px solid var(--color-logout);
+            width:100px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5em;
+            position: relative;
+            margin-top: 0.1em;
+            
+            &:hover {
+                background: var(--color-logout);
+                color: white;
+            }
+          
+        }
     }
 }
 
@@ -397,10 +414,19 @@ nav {
     }
 
     .contact-section {
-        position: relative;
-
+        display:flex;
+        flex-direction: column;
         .container {
             display: flex;
+        }
+        .contact__div {
+            display: flex;
+            flex-direction: row;
+            h1 {
+                position: relative;
+                top: 0;
+            }
+
         }
     }
 
@@ -416,11 +442,15 @@ nav {
         }
     }
     .contact-left{
-        display: inline-block;
-        position: relative;
-        right: 0;
+     //   display: inline-block;
+       // position: relative;
+       // right: 0;
+       h2 {
+           color: white;
+       }
+
     }
-    
+
 }
 
 @media only screen and (min-width: 1450px) {
