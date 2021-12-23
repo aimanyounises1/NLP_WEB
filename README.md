@@ -1,5 +1,5 @@
 # Web Application with NLP :
-### A  Full-stack project in NLP using Django as a backend and Django rest framework as API with Bert model, the fronend is with React.js.
+Full-stack project in NLP using Django as a backend and Django rest framework as API with Bert model, the fronend is with React.js in 3 languages (English, Hebrew, Arabic).
 
 # NLP WEB :
 https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-a132-418835cb677e.mov
