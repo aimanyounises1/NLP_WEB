@@ -5,6 +5,10 @@
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/Login.png)
 
 
+https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-a132-418835cb677e.mov
+
+
+
 ## User Interface for bert summarization model :
 ![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/UI.png)
 
