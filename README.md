@@ -1,10 +1,7 @@
 # Web Application with NLP :
 ### A  Full-stack project in NLP using Django as a backend and Django rest framework as API with Bert model, the fronend is with React.js.
 
-## User Signin page gonna change it.
-![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/Login.png)
-
-
+# NLP WEB :
 https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-a132-418835cb677e.mov
 
 
