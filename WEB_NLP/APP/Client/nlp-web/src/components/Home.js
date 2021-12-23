@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../static/Home.scss";
-import MenuIcon from "@material-ui//core/Menu";
 import "../static/Modal.css";
-import { Paper } from "@material-ui/core";
 import Login from "../components/Login";
 import { useNavigate } from "react-router-dom";
 import menu from "../images/menu.svg";
+import Handler from "../components/Handler";
+import "./Handler.scss";
 export default function Home(props) {
   const [modal, setModal] = useState(false);
+  const [token , setToken] = useState("");
   const clicked = (click) => {
     setModal(click);
     console.log("click");
@@ -27,35 +28,36 @@ export default function Home(props) {
   };
 
   const history = useNavigate();
-  const [token, setToken] = useState(
-    localStorage.getItem("authToken")
-      ? JSON.parse(localStorage.getItem("authToken"))
-      : null
-  );
-  let [authenticated, setAuthenticated] = useState(
-    localStorage.getItem("authToken") ? true : false
-  );
+//   const [token, setToken] = useState(
+//     localStorage.getItem("authToken")
+//       ? JSON.parse(localStorage.getItem("authToken"))
+//       : null
+//   );
+//   let [authenticated, setAuthenticated] = useState(
+//     localStorage.getItem("authToken") ? true : false
+//   );
   setTimeout(function () {
     localStorage.removeItem("authToken");
   }, 120 * 60 * 1000);
+  useEffect(()=>{
+      // this code will scroll down to the oinput section.
+      var destination = document.getElementById("input").offsetTop;
+      window.scrollTo(0 , destination);
+  },[token])
   const userLogin = (tok) => {
     setToken(tok);
-    setAuthenticated((authenticated) => true);
-    console.log("homepage");
-    history("/homepage");
   };
 
   return (
     <div id="grand">
-      {modal && <Login  exit = {exit}/>}
-      <div id="name">
+      {modal && <Login userLogin = {userLogin} exit = {exit}/>}
+     
         <div className="navbar">
           <div className="container">
             <a className="logo" href="#">
               <span>NLP </span>
               WEB
             </a>
-
             <img
               id="mobile-cta"
               className="mobile-menu"
@@ -95,9 +97,9 @@ export default function Home(props) {
               </ul>
             </nav>
           </div>
-        </div>
+         </div>
 
-        <div className="hero">
+         <div className="hero">
           <div className="container">
             <div className="left-col">
               <p className="subhead">It's Easier &amp; Cleaner</p>
@@ -114,9 +116,9 @@ export default function Home(props) {
               alt="Illustration"
             />
           </div>
-        </div>
+            </div>
 
-        <div>
+         <div>
           <section className="features-section">
             <div className="container">
               <ul className="features-list">
@@ -134,8 +136,8 @@ export default function Home(props) {
               />
             </div>
           </section>
-        </div>
-        <div>
+         </div>
+            <div>
           <section className="testimonials-section">
             <div className="container">
               <ul>
@@ -178,8 +180,8 @@ export default function Home(props) {
               </ul>
             </div>
           </section>
-        </div>
-        <div>
+          </div>
+         <div>
           <section className="contact-section">
             <div className="contact-left">
               <h2> Contact me</h2>
@@ -202,10 +204,14 @@ export default function Home(props) {
                   value="Send message"
                 />
               </form>
-            </div>
-          </section>
-        </div>
-      </div>
+             </div>
+             </section>
+           
+             </div>
+             <div id="input">
+             {token && <Handler />}
+             </div>
+            
     </div>
   );
 }

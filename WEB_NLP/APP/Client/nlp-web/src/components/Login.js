@@ -74,7 +74,7 @@ const Login = (props) => {
     console.log(data);
     if (response.status === 200) {
       console.log(data.token);
-      // props.userLogin(data.token);
+       props.userLogin(data.token);
       localStorage.setItem("authToken", JSON.stringify(data));
       history("/home");
       alert("You are logged in!");

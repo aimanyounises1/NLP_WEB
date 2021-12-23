@@ -1,12 +1,10 @@
 import "./App.css";
 import React, { useState } from "react";
 import Login from "./components/Login";
-import Sidebar from "./components/Sidebar";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Home from "./components/Home";
 import { useNavigate } from "react-router-dom";
-import Appbar from "./components/Appbar";
 import "./static/Homepage.css";
 document.body.style.backgroundColor = "black";
 function App() {
