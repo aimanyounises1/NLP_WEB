@@ -12,6 +12,7 @@ import img from "../images/author.jpeg";
 export default function Home(props) {
   const [modal, setModal] = useState(false);
   const [token, setToken] = useState("");
+  
   const clicked = (click) => {
     setModal(click);
     console.log("click");
@@ -20,6 +21,19 @@ export default function Home(props) {
       document.body.style.overflow = "hidden";
     }
   };
+
+  useEffect(async () => {
+    async function load_models() {
+      let response = await fetch("http://127.0.0.1:8000/backendapi/home", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+    load_models();
+  }, []);
+
   useEffect(() => {
     console.log("useEffect");
     clicked(modal);
@@ -30,7 +44,7 @@ export default function Home(props) {
     setModal(false);
   };
 
-  const history = useNavigate();
+  //const history = useNavigate();
   //   const [token, setToken] = useState(
   //     localStorage.getItem("authToken")
   //       ? JSON.parse(localStorage.getItem("authToken"))
@@ -42,11 +56,11 @@ export default function Home(props) {
   setTimeout(function () {
     localStorage.removeItem("authToken");
   }, 120 * 60 * 1000);
-  useEffect(() => {
-    // this code will scroll down to the oinput section.
-    // var destination = document.getElementById("input").offsetTop;
-    // window.scrollTo(0 , destination);
-  }, [token]);
+  // useEffect(() => {
+  //   // this code will scroll down to the oinput section.
+  //   // var destination = document.getElementById("input").offsetTop;
+  //   // window.scrollTo(0 , destination);
+  // }, [token]);
   const userLogin = (tok) => {
     setToken(tok);
   };
@@ -84,7 +98,7 @@ export default function Home(props) {
                 </Link>
               </li>
               <li>
-                <Link to="input" smooth={true} duration={1000}>
+                <Link to="input__scroll" smooth={true} duration={1000}>
                   {" "}
                   Try{" "}
                 </Link>
@@ -110,14 +124,16 @@ export default function Home(props) {
                       setModal(!modal);
                     }}
                   >
-                   
                     Login
                   </button>
                 ) : (
-                  <button className="logout__btn" onClick={() => {
-                    setToken("");
-                    localStorage.removeItem("authToken");
-                  }}>
+                  <button
+                    className="logout__btn"
+                    onClick={() => {
+                      setToken("");
+                      localStorage.removeItem("authToken");
+                    }}
+                  >
                     Logout
                   </button>
                 )}
@@ -135,7 +151,7 @@ export default function Home(props) {
             <div className="hero-cta">
               <Link
                 to="input"
-                class="primary-cta"
+                className="primary-cta"
                 duration={1000}
                 smooth={true}
               >
@@ -214,8 +230,8 @@ export default function Home(props) {
           </div>
         </section>
       </div>
-      <div id="input">{token && <Handler />}</div>
-
+      {token && <Handler />}
+        
       <section className="contact-section" id="contact">
         <div className="contact__div">
           <Avatar
@@ -237,7 +253,6 @@ export default function Home(props) {
           <form action="">
             <label type="name">Name</label>
             <input type="text" id="name" name="name" />
-
             <label type="message">Message</label>
             <textarea
               name="message"
@@ -248,7 +263,7 @@ export default function Home(props) {
 
             <input
               type="submit"
-              class="send-message-cta"
+              className="send-message-cta"
               value="Send message"
             />
           </form>
