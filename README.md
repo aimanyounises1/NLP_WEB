@@ -21,4 +21,4 @@ https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-
 * Connected all nlp models to the app.
 * improving the design.
 * Adding Hebrew and Arabic languages.
-
+* Trying to migrate big models like GPT-2.
