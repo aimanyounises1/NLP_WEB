@@ -2,14 +2,15 @@ import React, { useState,useEffect } from "react";
 import "./Handler.scss";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
-import { InputLabel } from "@material-ui/core";
+import { InputLabel, ListItemSecondaryAction } from "@material-ui/core";
 import { FormControl, Box } from "@material-ui/core";
 function Handler() {
   const [option, setOption] = useState("");
   const [input , setInput] = useState(""); 
   const [loading , setLoading] = useState(false); 
   const [url , setUrl] = useState("");
-  const [output , setOutput] = useState("");
+  const [output , setOutput] = useState(null);
+
   const handleChange = (event) => {
     event.preventDefault();
     console.log(event.target.value);
@@ -43,6 +44,7 @@ useEffect (() => {
       console.log(data[0].summary_text);
       setOutput(data[0].summary_text);
     }else{
+      setOutput(data);
       data.forEach(entity => {
         console.log(entity.score);
       })
@@ -88,9 +90,23 @@ useEffect(() => {
       
         <textarea name="message" id="message" cols="30" rows="10" onChange={handleOnChangeInput}></textarea>
         <input type="submit" onClick={sendData} value="Submit" />
-
-        {output&& <h3 >{output}</h3>}
-      
+        <div className="output-parent">
+        <div className= "output">
+        {output&& output.map(function(item , i ){
+            if(item.entity !== "O"){
+              return <mark style={{padding: '0.45em 0.6em' ,margin: '0.25em', lineHeight: '1', borderRadius: '0.35em' }}>
+                {item.word}<span key ={i} >
+                  {item.entity} 
+                  </span>
+                  </mark>
+          
+            
+            }else {
+              return <h3 style ={{margin: '0.25em'}}>{item.word}</h3>
+            }
+        })}
+        </div>
+        </div>
     </section>
   );
   /*

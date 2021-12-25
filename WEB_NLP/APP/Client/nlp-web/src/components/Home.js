@@ -9,6 +9,8 @@ import "./Handler.scss";
 import { Link } from "react-scroll";
 import { Avatar } from "@material-ui/core";
 import img from "../images/author.jpeg";
+import linkedin from "../images/linkedin-icon.svg";
+import github from "../images/GitHub-logo.png"
 export default function Home(props) {
   const [modal, setModal] = useState(false);
   const [token, setToken] = useState("");
@@ -31,8 +33,10 @@ export default function Home(props) {
         },
       });
     }
+    if (token) {
     load_models();
-  }, []);
+    }
+  }, [token]);
 
   useEffect(() => {
     console.log("useEffect");
@@ -117,7 +121,7 @@ export default function Home(props) {
                 </Link>
               </li>
               <li className="go-premium-cta">
-                {!token ? (
+                {!localStorage.getItem('authToken')? (
                   <button
                     className="button"
                     onClick={() => {
@@ -132,6 +136,7 @@ export default function Home(props) {
                     onClick={() => {
                       setToken("");
                       localStorage.removeItem("authToken");
+                      
                     }}
                   >
                     Logout
@@ -230,13 +235,25 @@ export default function Home(props) {
           </div>
         </section>
       </div>
-      {token && <Handler />}
+      {localStorage.getItem('authToken') && <Handler />}
         
       <section className="contact-section" id="contact">
+        <div className="contact-section-logos">
+
+     <a href="https://www.linkedin.com/in/aiman-younis-050744200/" >
+     <img src ={linkedin} width="40px" height="40px" />
+     </a>
+     <a href="https://github.com/aimanyounises1" >
+     <img src ={github} width="40px" height="40px"/>
+     </a>
+        </div>
+   
         <div className="contact__div">
           <Avatar
             src={img}
-            style={{ display: "inline-block", marginTop: "0.8em" }}
+            style={{ display: "inline-block", marginTop: "0.8em"}}
+            className="avatar"
+            
           >
             {" "}
             Aiman

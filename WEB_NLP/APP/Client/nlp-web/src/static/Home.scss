@@ -158,7 +158,7 @@ ul.features-list {
 .testimonials-section {
     background: var(--primary-color);
     color: white;
-
+    
     li {
         background: #006BD6;
         text-align: center;
@@ -166,15 +166,23 @@ ul.features-list {
         width: 80%;
         margin: 0 auto 5em auto;
         border-radius: 1em;
-
+        transition: 0.3;
         img {
             width: 5em;
             height: 5em;
             border: 5px solid #006BD6;
             border-radius: 50%;
             margin-top: -4.5em;
+
+           
         }
+        &:hover{
+            transform:scale(1.3);
+        }
+       
     }
+    
+
 
 }
 
@@ -367,8 +375,12 @@ nav {
     .hero-img {
         width: 20%;
         margin-right: 8em;
-
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.2);
+        }
     }
+    
 
     .hero-cta {
         display: flex;
@@ -416,6 +428,7 @@ nav {
     .contact-section {
         display:flex;
         flex-direction: column;
+        padding :2em;
         .container {
             display: flex;
         }
@@ -426,14 +439,32 @@ nav {
                 position: relative;
                 top: 0;
             }
+            .avatar{
+                transition: 0.3s;
+                &:hover{
+                    transform: scale(1.5);
+                }
 
+            }
+        }
+        .contact-section-logos{
+            transition: 0.3s;
+            display: flex;
+            flex-direction: row-reverse;
+            img {
+                right: 0;
+                margin: 0.3em;
+                right:0;
+                &:hover{
+                    transform: scale(1.5);
+                }
+            }
+            
         }
     }
 
     .contact-right {
         position: absolute;
-        right: 0;
-        top: 0;
         width: 45%;
         height: 100%;
 

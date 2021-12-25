@@ -25,3 +25,18 @@ $select-height: 40px;
 h2 {
     color:black;
 }
+
+.output {
+   display:flex;
+   flex-direction:row;
+  mark{
+      font-weight: bold;
+      
+    span {
+        margin: 0.3em;
+        
+    }
+}
+
+}
+

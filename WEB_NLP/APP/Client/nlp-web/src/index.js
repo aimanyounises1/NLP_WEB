@@ -7,7 +7,10 @@ import {BrowserRouter} from 'react-router-dom'
 
 ReactDOM.render(
     <BrowserRouter >
+    <div>
+    <head><title>NLP WEB</title></head>
     <App />
+    </div>
     </BrowserRouter>
   ,
   document.getElementById('root')

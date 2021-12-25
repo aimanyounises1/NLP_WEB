@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import { useNavigate } from "react-router-dom";
 import "./static/Homepage.css";
 document.body.style.backgroundColor = "black";
+document.title = "NLP WEB"
 function App() {
   const history = useNavigate();
   const [token, setToken] = useState(
@@ -27,6 +28,8 @@ function App() {
     //history('/homepage')
   };
   return (
+    <>
+   
     <Routes>
       <Route exact path="/" element={<Login userLogin={userLogin} />} />
       <Route exact path="/home" element={<Home />} />
@@ -41,6 +44,7 @@ function App() {
         element={<Login userLogin={userLogin} />}
       ></Route>
     </Routes>
+    </>
   );
 }
 
