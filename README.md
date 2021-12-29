@@ -9,13 +9,6 @@ https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-
 ## Example of English NER with Summarizer:
 ![Eng_ner_sum](https://user-images.githubusercontent.com/58775369/147666802-b7bce487-916f-40c5-9dbe-ede071b7d07d.jpeg)
 
-## User Interface for bert summarization model :
-![image](https://github.com/aimanyounises1/NLP_WEB/blob/master/WEB_NLP/images/UI.png)
-
-
-## User authentication using Django auth_token
-![image](https://user-images.githubusercontent.com/58775369/146504624-13e59c3c-cd1f-45b9-a2fb-09f5a7148e43.png)
-
 
 
 
