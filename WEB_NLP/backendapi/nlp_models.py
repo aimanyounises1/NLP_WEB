@@ -18,9 +18,9 @@ class remove_I_B():
                             if entity != "O":
                                 ent_position, ent_type = entity.split("-")
                                 if ent_position == "B":
-                                    w = word
+                                    w = word + " "
                                 elif ent_position == "I":
-                                    w += " " + word
+                                    w +=  word
                                 elif ent_position == "L":
                                     w += " " + word
                                 ent['word'] = w
@@ -37,6 +37,5 @@ class remove_I_B():
                                 pass
                             else:
                                 continue
-
 
 

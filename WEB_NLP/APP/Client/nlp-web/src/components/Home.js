@@ -13,7 +13,11 @@ import linkedin from "../images/linkedin-icon.svg";
 import github from "../images/GitHub-logo.png"
 export default function Home(props) {
   const [modal, setModal] = useState(false);
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(
+    localStorage.getItem("authToken")
+      ? JSON.parse(localStorage.getItem("authToken"))
+      : null
+  );
   
   const clicked = (click) => {
     setModal(click);
