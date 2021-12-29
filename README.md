@@ -22,4 +22,5 @@ https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-
 * Adding BIO-NER in English,Arabic and Hebrew.
 * trying to find dataset to summarize Hebrew and Arabic.
 * Adding ChatBox for Customers.
-* Improving English NER dataset
+* Improving English NER dataset.
+* Adding Mask completion for 3 languages.
