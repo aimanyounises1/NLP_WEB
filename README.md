@@ -25,3 +25,8 @@ https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-
 * improving the design.
 * Adding Hebrew and Arabic languages.
 * Trying to migrate big models like GPT-2.
+* Adding Named Entity Recognition for Hebrew.
+* Adding BIO-NER in English,Arabic and Hebrew.
+* trying to find dataset to summarize Hebrew and Arabic.
+* Adding ChatBox for Customers.
+
