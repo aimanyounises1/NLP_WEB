@@ -32,7 +32,7 @@ https://user-images.githubusercontent.com/58775369/147285132-ba586c73-0769-45e6-
 * Adding ChatBox for Customers.
 * Improving English NER dataset.
 * Adding Mask completion for 3 languages.
-* Adding Firebase/Djanjo SQLite3 to each language to collect data.
+* Adding Firebase/Django SQLite3 to each language to collect data.
 * Adding Mask Bert model for 3 languages.
 * Adding summarizer in Arabic and Hebrew using TF-IDF/BagOfWords for client evaluation.
 * Adding Text-Generation GPT-2 for Hebrew, Arabic and English.
